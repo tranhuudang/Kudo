@@ -14,6 +14,7 @@
 		DAB05026295E7BD400C240AF /* KudoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05025295E7BD400C240AF /* KudoTests.swift */; };
 		DAB05030295E7BD400C240AF /* KudoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0502F295E7BD400C240AF /* KudoUITests.swift */; };
 		DAB05032295E7BD400C240AF /* KudoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05031295E7BD400C240AF /* KudoUITestsLaunchTests.swift */; };
+		DAB05040295E7CC300C240AF /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = DAB0503F295E7CC300C240AF /* OpenAISwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB05040295E7CC300C240AF /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = Kudo;
+			packageProductDependencies = (
+				DAB0503F295E7CC300C240AF /* OpenAISwift */,
+			);
 			productName = Kudo;
 			productReference = DAB05011295E7BD200C240AF /* Kudo.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = DAB05008295E7BD200C240AF;
+			packageReferences = (
+				DAB0503E295E7CC300C240AF /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = DAB05012295E7BD200C240AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -577,6 +585,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DAB0503E295E7CC300C240AF /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tranhuudang/OpenAISwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DAB0503F295E7CC300C240AF /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAB0503E295E7CC300C240AF /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DAB05009295E7BD200C240AF /* Project object */;
 }
