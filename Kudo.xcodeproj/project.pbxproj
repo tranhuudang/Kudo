@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA36607E295F236700581DD1 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = DA36607D295F236700581DD1 /* SwiftUIFontIcon */; };
+		DAA31C1C295FC2F200037723 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA31C1B295FC2F200037723 /* Message.swift */; };
 		DAB05015295E7BD200C240AF /* KudoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05014295E7BD200C240AF /* KudoApp.swift */; };
 		DAB05017295E7BD200C240AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05016295E7BD200C240AF /* ContentView.swift */; };
 		DAB05019295E7BD400C240AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB05018295E7BD400C240AF /* Assets.xcassets */; };
@@ -15,6 +17,7 @@
 		DAB05030295E7BD400C240AF /* KudoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0502F295E7BD400C240AF /* KudoUITests.swift */; };
 		DAB05032295E7BD400C240AF /* KudoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05031295E7BD400C240AF /* KudoUITestsLaunchTests.swift */; };
 		DAB05040295E7CC300C240AF /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = DAB0503F295E7CC300C240AF /* OpenAISwift */; };
+		DAFBCBB1295FCDB500AFEAA0 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFBCBB0295FCDB500AFEAA0 /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DAA31C1B295FC2F200037723 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DAB05011295E7BD200C240AF /* Kudo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kudo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB05014295E7BD200C240AF /* KudoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KudoApp.swift; sourceTree = "<group>"; };
 		DAB05016295E7BD200C240AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 		DAB0502B295E7BD400C240AF /* KudoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KudoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB0502F295E7BD400C240AF /* KudoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KudoUITests.swift; sourceTree = "<group>"; };
 		DAB05031295E7BD400C240AF /* KudoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KudoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DAFBCBB0295FCDB500AFEAA0 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA36607E295F236700581DD1 /* SwiftUIFontIcon in Frameworks */,
 				DAB05040295E7CC300C240AF /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +79,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DAA31C1A295FC2D000037723 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAA31C1B295FC2F200037723 /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DAA31C1D295FC7D800037723 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DAFBCBB0295FCDB500AFEAA0 /* MessageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DAA31C1F295FC87600037723 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		DAB05008295E7BD200C240AF = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				DAB05014295E7BD200C240AF /* KudoApp.swift */,
+				DAA31C1F295FC87600037723 /* ViewModels */,
+				DAA31C1D295FC7D800037723 /* Views */,
+				DAA31C1A295FC2D000037723 /* Models */,
 				DAB05016295E7BD200C240AF /* ContentView.swift */,
 				DAB05018295E7BD400C240AF /* Assets.xcassets */,
 				DAB0501A295E7BD400C240AF /* Preview Content */,
@@ -147,6 +179,7 @@
 			name = Kudo;
 			packageProductDependencies = (
 				DAB0503F295E7CC300C240AF /* OpenAISwift */,
+				DA36607D295F236700581DD1 /* SwiftUIFontIcon */,
 			);
 			productName = Kudo;
 			productReference = DAB05011295E7BD200C240AF /* Kudo.app */;
@@ -222,6 +255,7 @@
 			mainGroup = DAB05008295E7BD200C240AF;
 			packageReferences = (
 				DAB0503E295E7CC300C240AF /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				DA36607C295F236700581DD1 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
 			);
 			productRefGroup = DAB05012295E7BD200C240AF /* Products */;
 			projectDirPath = "";
@@ -265,8 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAA31C1C295FC2F200037723 /* Message.swift in Sources */,
 				DAB05017295E7BD200C240AF /* ContentView.swift in Sources */,
 				DAB05015295E7BD200C240AF /* KudoApp.swift in Sources */,
+				DAFBCBB1295FCDB500AFEAA0 /* MessageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +623,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DA36607C295F236700581DD1 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huybuidac/SwiftUIFontIcon";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		DAB0503E295E7CC300C240AF /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/tranhuudang/OpenAISwift";
@@ -598,6 +642,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DA36607D295F236700581DD1 /* SwiftUIFontIcon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA36607C295F236700581DD1 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
+			productName = SwiftUIFontIcon;
+		};
 		DAB0503F295E7CC300C240AF /* OpenAISwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DAB0503E295E7CC300C240AF /* XCRemoteSwiftPackageReference "OpenAISwift" */;

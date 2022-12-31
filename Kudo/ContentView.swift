@@ -7,14 +7,14 @@
 
 import SwiftUI
 import OpenAISwift
-
+import SwiftUIFontIcon
 
 class ViewModel: ObservableObject {
     init(){}
     
     private var client: OpenAISwift?
     func setup(){
-        client = OpenAISwift(authToken: "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")
+        client = OpenAISwift(authToken: "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")
     }
     func send(text: String, completion: @escaping (String) -> Void)
     {
@@ -37,29 +37,51 @@ class ViewModel: ObservableObject {
 struct ContentView: View {
     @ObservedObject var viewModel = ViewModel()
     @State var text = ""
-    @State var models = [String]()
+    @State var conversation = [MessageView]()
     var body: some View {
-        ScrollView{
-                ForEach(models, id : \.self){
-                    string in
-                    Text(string)
+        NavigationView{
+            VStack{
+                ScrollViewReader { scrollView in
+                ScrollView{
+                    ForEach(conversation, id: \.message.id){
+                        message in
+                        HStack{
+                            message.id(message.id)
+                        }
+                        }
+                    }.onChange(of: conversation.count, perform: {value in
+                        scrollView.scrollTo(conversation.last?.id)
+                    })
                 }
-                
+                .onAppear(perform: {
+                    viewModel.setup()
+                })
+                .padding()
+                Spacer()
+                HStack{
+                    Button("Translate") {
+                    }
+                    .padding()
+                        .background(.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(20)
+                    
+                    Button("Notes"){}
+                    Spacer()
+                }
+                .padding(.horizontal)
+                HStack{
+                    TextField("Type here to ask", text: $text)
+                        .padding(.horizontal)
+                        .frame(height: 48)
+                        .cornerRadius(20)
+                        .onSubmit {
+                            send()
+                        }
+                    FontIcon.button(.materialIcon(code: .mic), action: { send() })
+                }.padding(.horizontal)
+            }.navigationTitle("Kudo")
         }
-        
-        .onAppear{
-                viewModel.setup()
-            }
-            .padding()
-            .navigationTitle("Kudo Playground")
-        Spacer()
-        HStack{
-            TextField("Type here to ask", text: $text)
-            Button("Send"){
-                send()
-            }
-        }
-        .padding()
     }
     
         
@@ -67,11 +89,12 @@ struct ContentView: View {
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
-        models.append("Me: \(text)")
+        
+        conversation.append(MessageView(message: Message(content: text)))
         viewModel.send(text: text){
             response in
             DispatchQueue.main.async{
-                self.models.append("Kudo: \(response)")
+                self.conversation.append(MessageView(message: Message(content: response),floatToRight: true))
                 self.text = ""
             }
         }
@@ -81,6 +104,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+            ContentView()
     }
 }
