@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DA36607E295F236700581DD1 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = DA36607D295F236700581DD1 /* SwiftUIFontIcon */; };
+		DA57AC9529603023007C0963 /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57AC9429603023007C0963 /* QA.swift */; };
+		DA57AC9729607187007C0963 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57AC9629607187007C0963 /* ToolsView.swift */; };
 		DAA31C1C295FC2F200037723 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA31C1B295FC2F200037723 /* Message.swift */; };
 		DAB05015295E7BD200C240AF /* KudoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05014295E7BD200C240AF /* KudoApp.swift */; };
 		DAB05017295E7BD200C240AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05016295E7BD200C240AF /* ContentView.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA57AC9429603023007C0963 /* QA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
+		DA57AC9629607187007C0963 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
 		DAA31C1B295FC2F200037723 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DAB05011295E7BD200C240AF /* Kudo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kudo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB05014295E7BD200C240AF /* KudoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KudoApp.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				DAFBCBB0295FCDB500AFEAA0 /* MessageView.swift */,
+				DA57AC9629607187007C0963 /* ToolsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 		DAA31C1F295FC87600037723 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DA57AC9429603023007C0963 /* QA.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -299,9 +305,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA57AC9729607187007C0963 /* ToolsView.swift in Sources */,
 				DAA31C1C295FC2F200037723 /* Message.swift in Sources */,
 				DAB05017295E7BD200C240AF /* ContentView.swift in Sources */,
 				DAB05015295E7BD200C240AF /* KudoApp.swift in Sources */,
+				DA57AC9529603023007C0963 /* QA.swift in Sources */,
 				DAFBCBB1295FCDB500AFEAA0 /* MessageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

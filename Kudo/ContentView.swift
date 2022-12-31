@@ -9,30 +9,6 @@ import SwiftUI
 import OpenAISwift
 import SwiftUIFontIcon
 
-class ViewModel: ObservableObject {
-    init(){}
-    
-    private var client: OpenAISwift?
-    func setup(){
-        client = OpenAISwift(authToken: "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")
-    }
-    func send(text: String, completion: @escaping (String) -> Void)
-    {
-        client?.sendCompletion(with: text, maxTokens: 630,
-                               completionHandler: {
-            result in
-            switch result{
-            case .success(let model):
-                let output = model.choices.first?.text ?? ""
-                completion(output )
-            case .failure:
-                break
-            }
-        }
-        
-        )
-    }
-}
 
 struct ContentView: View {
     @ObservedObject var viewModel = ViewModel()
@@ -42,12 +18,12 @@ struct ContentView: View {
         NavigationView{
             VStack{
                 ScrollViewReader { scrollView in
-                ScrollView{
-                    ForEach(conversation, id: \.message.id){
-                        message in
-                        HStack{
-                            message.id(message.id)
-                        }
+                    ScrollView{
+                        ForEach(conversation, id: \.message.id){
+                            message in
+                            HStack{
+                                message.id(message.id)
+                            }
                         }
                     }.onChange(of: conversation.count, perform: {value in
                         scrollView.scrollTo(conversation.last?.id)
@@ -59,13 +35,13 @@ struct ContentView: View {
                 .padding()
                 Spacer()
                 HStack{
-                    Button("Translate") {
+                    Button("Asking") {
                     }
-                    .padding()
-                        .background(.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
-                    
+                    .padding(15)
+                    .background(.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
+                    Button("Translate"){}
                     Button("Notes"){}
                     Spacer()
                 }
@@ -78,19 +54,36 @@ struct ContentView: View {
                         .onSubmit {
                             send()
                         }
-                    FontIcon.button(.materialIcon(code: .mic), action: { send() })
+                    Button(action: {
+                        send()
+                    }, label: {
+                        Label("", systemImage: "mic")}
+                    )
+                    .padding()
                 }.padding(.horizontal)
-            }.navigationTitle("Kudo")
+            }
+            .navigationTitle("Kudo")
+            .navigationBarItems(trailing:
+                                    HStack {
+                NavigationLink{ToolsView()} label: {
+                    Label("Tools", systemImage: "plus.app" )
+                }
+                NavigationLink{ToolsView()} label: {
+                    Label("Settings", systemImage: "gearshape" )
+                }
+            }.padding()
+            )
         }
     }
     
-        
+    
     func send(){
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
         
         conversation.append(MessageView(message: Message(content: text)))
+        
         viewModel.send(text: text){
             response in
             DispatchQueue.main.async{
@@ -104,6 +97,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-            ContentView()
+        ContentView()
     }
 }
