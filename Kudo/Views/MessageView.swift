@@ -26,7 +26,7 @@ struct MessageView: View {
                 .foregroundColor(Color(floatToRight ? botForegroundColor : userForegroundColor))
                 
             .cornerRadius(20)
-            if !floatToRight { Spacer() }
+            if !floatToRight { Spacer() }//asdsdad
         }
             
     }
