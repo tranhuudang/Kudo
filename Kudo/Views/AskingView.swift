@@ -7,13 +7,18 @@
 
 import SwiftUI
 import OpenAISwift
-import SwiftUIFontIcon
 
 
-struct ContentView: View {
+struct AskingView: View {
     @ObservedObject var viewModel = ViewModel()
     @State var text = ""
     @State var conversation = [MessageView]()
+    var listTools: [String] = [
+        "Asking",
+        "Translate",
+        "Notes",
+        ]
+    var primaryColor = #colorLiteral(red: 0.1713213623, green: 0.1699589193, blue: 0.1723452508, alpha: 1)
     var body: some View {
         NavigationView{
             VStack{
@@ -34,18 +39,28 @@ struct ContentView: View {
                 })
                 .padding()
                 Spacer()
-                HStack{
-                    Button("Asking") {
+                ScrollView(.horizontal) {
+                    HStack(){
+                        ForEach(listTools, id: \.count) { tool in
+                            Button(tool) {
+                            }
+                            .padding(15)
+                            .background(Color(primaryColor))
+                            .foregroundColor(.white)
+                            .cornerRadius(20)
+                        }
+                        Button("Asking") {
+                        }
+                        .padding(15)
+                        .background(Color(primaryColor))
+                        .foregroundColor(.white)
+                        .cornerRadius(20)
+                        Button("Translate"){}.foregroundColor(Color(primaryColor))
+                        Button("Notes"){}.foregroundColor(Color(primaryColor))
+                        Spacer()
                     }
-                    .padding(15)
-                    .background(.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
-                    Button("Translate"){}
-                    Button("Notes"){}
-                    Spacer()
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
                 HStack{
                     TextField("Type here to ask", text: $text)
                         .padding(.horizontal)
@@ -57,7 +72,9 @@ struct ContentView: View {
                     Button(action: {
                         send()
                     }, label: {
-                        Label("", systemImage: "mic")}
+                        Label("", systemImage: "mic")
+                            .foregroundColor(Color(primaryColor))
+                    }
                     )
                     .padding()
                 }.padding(.horizontal)
@@ -66,10 +83,10 @@ struct ContentView: View {
             .navigationBarItems(trailing:
                                     HStack {
                 NavigationLink{ToolsView()} label: {
-                    Label("Tools", systemImage: "plus.app" )
+                    Label("Tools", systemImage: "plus.app" ).foregroundColor(Color(primaryColor))
                 }
                 NavigationLink{ToolsView()} label: {
-                    Label("Settings", systemImage: "gearshape" )
+                    Label("Settings", systemImage: "gearshape" ).foregroundColor(Color(primaryColor))
                 }
             }.padding()
             )
@@ -83,7 +100,6 @@ struct ContentView: View {
         }
         
         conversation.append(MessageView(message: Message(content: text)))
-        
         viewModel.send(text: text){
             response in
             DispatchQueue.main.async{
@@ -95,8 +111,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct AskingView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        AskingView()
     }
 }

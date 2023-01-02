@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA36607E295F236700581DD1 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = DA36607D295F236700581DD1 /* SwiftUIFontIcon */; };
+		DA2CD9C92961138800CB7013 /* OpenAIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CD9C82961138800CB7013 /* OpenAIToken.swift */; };
+		DA2CD9CB29612F2300CB7013 /* AskingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CD9CA29612F2300CB7013 /* AskingView.swift */; };
+		DA56D307296309D0006823B7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DA56D306296309D0006823B7 /* .gitignore */; };
 		DA57AC9529603023007C0963 /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57AC9429603023007C0963 /* QA.swift */; };
 		DA57AC9729607187007C0963 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57AC9629607187007C0963 /* ToolsView.swift */; };
 		DAA31C1C295FC2F200037723 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA31C1B295FC2F200037723 /* Message.swift */; };
 		DAB05015295E7BD200C240AF /* KudoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05014295E7BD200C240AF /* KudoApp.swift */; };
-		DAB05017295E7BD200C240AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05016295E7BD200C240AF /* ContentView.swift */; };
 		DAB05019295E7BD400C240AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB05018295E7BD400C240AF /* Assets.xcassets */; };
 		DAB0501C295E7BD400C240AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB0501B295E7BD400C240AF /* Preview Assets.xcassets */; };
 		DAB05026295E7BD400C240AF /* KudoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05025295E7BD400C240AF /* KudoTests.swift */; };
@@ -40,12 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA2CD9C82961138800CB7013 /* OpenAIToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIToken.swift; sourceTree = "<group>"; };
+		DA2CD9CA29612F2300CB7013 /* AskingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskingView.swift; sourceTree = "<group>"; };
+		DA56D306296309D0006823B7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DA57AC9429603023007C0963 /* QA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
 		DA57AC9629607187007C0963 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
 		DAA31C1B295FC2F200037723 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DAB05011295E7BD200C240AF /* Kudo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kudo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB05014295E7BD200C240AF /* KudoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KudoApp.swift; sourceTree = "<group>"; };
-		DAB05016295E7BD200C240AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DAB05018295E7BD400C240AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAB0501B295E7BD400C240AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DAB05021295E7BD400C240AF /* KudoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KudoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA36607E295F236700581DD1 /* SwiftUIFontIcon in Frameworks */,
 				DAB05040295E7CC300C240AF /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +98,7 @@
 			children = (
 				DAFBCBB0295FCDB500AFEAA0 /* MessageView.swift */,
 				DA57AC9629607187007C0963 /* ToolsView.swift */,
+				DA2CD9CA29612F2300CB7013 /* AskingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				DA57AC9429603023007C0963 /* QA.swift */,
+				DA2CD9C82961138800CB7013 /* OpenAIToken.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -111,6 +115,7 @@
 		DAB05008295E7BD200C240AF = {
 			isa = PBXGroup;
 			children = (
+				DA56D306296309D0006823B7 /* .gitignore */,
 				DAB05013295E7BD200C240AF /* Kudo */,
 				DAB05024295E7BD400C240AF /* KudoTests */,
 				DAB0502E295E7BD400C240AF /* KudoUITests */,
@@ -135,7 +140,6 @@
 				DAA31C1F295FC87600037723 /* ViewModels */,
 				DAA31C1D295FC7D800037723 /* Views */,
 				DAA31C1A295FC2D000037723 /* Models */,
-				DAB05016295E7BD200C240AF /* ContentView.swift */,
 				DAB05018295E7BD400C240AF /* Assets.xcassets */,
 				DAB0501A295E7BD400C240AF /* Preview Content */,
 			);
@@ -185,7 +189,6 @@
 			name = Kudo;
 			packageProductDependencies = (
 				DAB0503F295E7CC300C240AF /* OpenAISwift */,
-				DA36607D295F236700581DD1 /* SwiftUIFontIcon */,
 			);
 			productName = Kudo;
 			productReference = DAB05011295E7BD200C240AF /* Kudo.app */;
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB0501C295E7BD400C240AF /* Preview Assets.xcassets in Resources */,
+				DA56D307296309D0006823B7 /* .gitignore in Resources */,
 				DAB05019295E7BD400C240AF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,7 +311,8 @@
 			files = (
 				DA57AC9729607187007C0963 /* ToolsView.swift in Sources */,
 				DAA31C1C295FC2F200037723 /* Message.swift in Sources */,
-				DAB05017295E7BD200C240AF /* ContentView.swift in Sources */,
+				DA2CD9CB29612F2300CB7013 /* AskingView.swift in Sources */,
+				DA2CD9C92961138800CB7013 /* OpenAIToken.swift in Sources */,
 				DAB05015295E7BD200C240AF /* KudoApp.swift in Sources */,
 				DA57AC9529603023007C0963 /* QA.swift in Sources */,
 				DAFBCBB1295FCDB500AFEAA0 /* MessageView.swift in Sources */,
@@ -650,11 +655,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DA36607D295F236700581DD1 /* SwiftUIFontIcon */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DA36607C295F236700581DD1 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
-			productName = SwiftUIFontIcon;
-		};
 		DAB0503F295E7CC300C240AF /* OpenAISwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DAB0503E295E7CC300C240AF /* XCRemoteSwiftPackageReference "OpenAISwift" */;
