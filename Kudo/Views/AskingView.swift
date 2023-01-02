@@ -49,17 +49,18 @@ struct AskingView: View {
                             .foregroundColor(.white)
                             .cornerRadius(20)
                         }
-                        Button("Asking") {
-                        }
-                        .padding(15)
-                        .background(Color(primaryColor))
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
-                        Button("Translate"){}.foregroundColor(Color(primaryColor))
-                        Button("Notes"){}.foregroundColor(Color(primaryColor))
-                        Spacer()
+                        //Old static list tools
+//                        Button("Asking") {
+//                        }
+//                        .padding(15)
+//                        .background(Color(primaryColor))
+//                        .foregroundColor(.white)
+//                        .cornerRadius(20)
+//                        Button("Translate"){}.foregroundColor(Color(primaryColor))
+//                        Button("Notes"){}.foregroundColor(Color(primaryColor))
+//                        Spacer()
                     }
-                    .padding(.horizontal)
+                    .padding(.horizontal) 
                 }
                 HStack{
                     TextField("Type here to ask", text: $text)
@@ -103,7 +104,14 @@ struct AskingView: View {
         viewModel.send(text: text){
             response in
             DispatchQueue.main.async{
-                self.conversation.append(MessageView(message: Message(content: response),floatToRight: true))
+                // Check if a url is exist in a answer
+                let urlInContent = UrlDetector(inputContent: response).getUrl()
+                
+                if urlInContent != "" {
+                    self.conversation.append(MessageView(message: Message(content: response),floatToRight: true, imageUrl: urlInContent))
+                } else {
+                    self.conversation.append(MessageView(message: Message(content: response),floatToRight: true))
+                }
                 self.text = ""
             }
         }

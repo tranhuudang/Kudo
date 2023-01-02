@@ -15,4 +15,5 @@ struct Message {
         self.content = content
     }
     
+    
 }

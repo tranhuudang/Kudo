@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA2CD9C92961138800CB7013 /* OpenAIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CD9C82961138800CB7013 /* OpenAIToken.swift */; };
 		DA2CD9CB29612F2300CB7013 /* AskingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2CD9CA29612F2300CB7013 /* AskingView.swift */; };
+		DA56D30929632ABC006823B7 /* UrlDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA56D30829632ABC006823B7 /* UrlDetector.swift */; };
 		DA57AC9529603023007C0963 /* QA.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57AC9429603023007C0963 /* QA.swift */; };
 		DA57AC9729607187007C0963 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57AC9629607187007C0963 /* ToolsView.swift */; };
 		DAA31C1C295FC2F200037723 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA31C1B295FC2F200037723 /* Message.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		DA2CD9C82961138800CB7013 /* OpenAIToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIToken.swift; sourceTree = "<group>"; };
 		DA2CD9CA29612F2300CB7013 /* AskingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskingView.swift; sourceTree = "<group>"; };
+		DA56D30829632ABC006823B7 /* UrlDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlDetector.swift; sourceTree = "<group>"; };
 		DA57AC9429603023007C0963 /* QA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QA.swift; sourceTree = "<group>"; };
 		DA57AC9629607187007C0963 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
 		DAA31C1B295FC2F200037723 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				DA57AC9429603023007C0963 /* QA.swift */,
+				DA56D30829632ABC006823B7 /* UrlDetector.swift */,
 				DA2CD9C82961138800CB7013 /* OpenAIToken.swift */,
 			);
 			path = ViewModels;
@@ -306,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA57AC9729607187007C0963 /* ToolsView.swift in Sources */,
+				DA56D30929632ABC006823B7 /* UrlDetector.swift in Sources */,
 				DAA31C1C295FC2F200037723 /* Message.swift in Sources */,
 				DA2CD9CB29612F2300CB7013 /* AskingView.swift in Sources */,
 				DA2CD9C92961138800CB7013 /* OpenAIToken.swift in Sources */,
