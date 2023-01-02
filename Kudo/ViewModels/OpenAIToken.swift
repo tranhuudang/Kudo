@@ -9,5 +9,5 @@ import Foundation
 
 struct OpenAIToken{
     let tokenKey: String = "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"
-    //van bi thay doi
+    //still change
 }
