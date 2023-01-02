@@ -82,7 +82,7 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
-Kudo/ViewModels/OpenAIToken.swift
+**/ViewModels/OpenAIToken.swift
 
 # Code Injection
 #
