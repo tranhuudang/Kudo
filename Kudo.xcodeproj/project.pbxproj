@@ -20,6 +20,8 @@
 		DAB05030295E7BD400C240AF /* KudoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0502F295E7BD400C240AF /* KudoUITests.swift */; };
 		DAB05032295E7BD400C240AF /* KudoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB05031295E7BD400C240AF /* KudoUITestsLaunchTests.swift */; };
 		DAB05040295E7CC300C240AF /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = DAB0503F295E7CC300C240AF /* OpenAISwift */; };
+		DAE5CF382963B9C400A7AC1F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE5CF372963B9C400A7AC1F /* SettingsView.swift */; };
+		DAE5CF3C2963C8C800A7AC1F /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE5CF3B2963C8C800A7AC1F /* LoadingIndicatorView.swift */; };
 		DAFBCBB1295FCDB500AFEAA0 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFBCBB0295FCDB500AFEAA0 /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		DAB0502B295E7BD400C240AF /* KudoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KudoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB0502F295E7BD400C240AF /* KudoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KudoUITests.swift; sourceTree = "<group>"; };
 		DAB05031295E7BD400C240AF /* KudoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KudoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DAE5CF372963B9C400A7AC1F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DAE5CF3B2963C8C800A7AC1F /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 		DAFBCBB0295FCDB500AFEAA0 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +100,9 @@
 		DAA31C1D295FC7D800037723 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DAE5CF3B2963C8C800A7AC1F /* LoadingIndicatorView.swift */,
 				DAFBCBB0295FCDB500AFEAA0 /* MessageView.swift */,
+				DAE5CF372963B9C400A7AC1F /* SettingsView.swift */,
 				DA57AC9629607187007C0963 /* ToolsView.swift */,
 				DA2CD9CA29612F2300CB7013 /* AskingView.swift */,
 			);
@@ -311,6 +317,8 @@
 				DA57AC9729607187007C0963 /* ToolsView.swift in Sources */,
 				DA56D30929632ABC006823B7 /* UrlDetector.swift in Sources */,
 				DAA31C1C295FC2F200037723 /* Message.swift in Sources */,
+				DAE5CF382963B9C400A7AC1F /* SettingsView.swift in Sources */,
+				DAE5CF3C2963C8C800A7AC1F /* LoadingIndicatorView.swift in Sources */,
 				DA2CD9CB29612F2300CB7013 /* AskingView.swift in Sources */,
 				DA2CD9C92961138800CB7013 /* OpenAIToken.swift in Sources */,
 				DAB05015295E7BD200C240AF /* KudoApp.swift in Sources */,

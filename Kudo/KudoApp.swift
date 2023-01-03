@@ -11,7 +11,9 @@ import SwiftUI
 struct KudoApp: App {
     var body: some Scene {
         WindowGroup {
-            AskingView()
+            NavigationView{
+                AskingView()
+            }
         }
     }
 }

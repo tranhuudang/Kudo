@@ -12,6 +12,7 @@ import OpenAISwift
 struct AskingView: View {
     @ObservedObject var viewModel = ViewModel()
     @State var text = ""
+    @State var loadingIndicator : Bool = false
     @State var conversation = [MessageView]()
     var listTools: [String] = [
         "Asking",
@@ -20,7 +21,6 @@ struct AskingView: View {
         ]
     var primaryColor = #colorLiteral(red: 0.1713213623, green: 0.1699589193, blue: 0.1723452508, alpha: 1)
     var body: some View {
-        NavigationView{
             VStack{
                 ScrollViewReader { scrollView in
                     ScrollView{
@@ -63,6 +63,10 @@ struct AskingView: View {
                     .padding(.horizontal) 
                 }
                 HStack{
+                    loadingIndicator ? LoadingIndicator(color: Color(primaryColor))
+                        .padding()
+                    :
+                    nil
                     TextField("Type here to ask", text: $text)
                         .padding(.horizontal)
                         .frame(height: 48)
@@ -71,14 +75,17 @@ struct AskingView: View {
                             send()
                         }
                     Button(action: {
+                        //loadingIndicator = true
                         send()
+                       
                     }, label: {
-                        Label("", systemImage: "mic")
+                        Label("", systemImage: "paperplane")
                             .foregroundColor(Color(primaryColor))
                     }
                     )
                     .padding()
-                }.padding(.horizontal)
+                }
+                .padding(.horizontal)
             }
             .navigationTitle("Kudo")
             .navigationBarItems(trailing:
@@ -86,21 +93,24 @@ struct AskingView: View {
                 NavigationLink{ToolsView()} label: {
                     Label("Tools", systemImage: "plus.app" ).foregroundColor(Color(primaryColor))
                 }
-                NavigationLink{ToolsView()} label: {
+                NavigationLink{SettingsView()} label: {
                     Label("Settings", systemImage: "gearshape" ).foregroundColor(Color(primaryColor))
                 }
             }.padding()
             )
         }
-    }
+    
     
     
     func send(){
+        loadingIndicator.toggle()
+        
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
-        
+      
         conversation.append(MessageView(message: Message(content: text)))
+        self.text = ""
         viewModel.send(text: text){
             response in
             DispatchQueue.main.async{
@@ -112,15 +122,17 @@ struct AskingView: View {
                 } else {
                     self.conversation.append(MessageView(message: Message(content: response),floatToRight: true))
                 }
-                self.text = ""
+                loadingIndicator.toggle()
             }
         }
         
-    }
 }
 
+}
 struct AskingView_Previews: PreviewProvider {
     static var previews: some View {
-        AskingView()
+        NavigationView{
+            AskingView()
+        }
     }
 }
